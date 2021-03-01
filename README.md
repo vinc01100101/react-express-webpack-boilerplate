@@ -1,13 +1,17 @@
-#React-Express-Webpack Boilerplate
-##with HMR and webpack-dev-module
+# React-Express-Webpack Boilerplate
+
+## with HMR and webpack-dev-module
+
 (node-sass optional.)
 
 My personal boilerplate for use that has HMR and webpack-dev-module
 
-###Dynamic Import with Pug Variables
+### Dynamic Import with Pug Variables
+
 Server sends Pug a variable that tells /dist/js/dynamicImport.js which page or React parent component to render.
 
-###HMR
+### HMR
+
 Hot Module Replacement (HMR) exchanges, adds, or removes modules while an application is running, without a full reload. This can significantly speed up development in a few ways:
 
 -   Retain application state which is lost during a full reload.
@@ -16,7 +20,8 @@ Hot Module Replacement (HMR) exchanges, adds, or removes modules while an applic
 
 https://webpack.js.org/concepts/hot-module-replacement/ - source (HMR)
 
-###webpack-dev-middleware
+### webpack-dev-middleware
+
 An express-style development middleware for use with webpack bundles and allows for serving of the files emitted from webpack. This should be used for development only.
 
 Some of the benefits of using this middleware include:
@@ -27,4 +32,4 @@ Some of the benefits of using this middleware include:
 
 https://github.com/webpack/webpack-dev-middleware - source (webpack-dev-middleware)
 
-####-vinc01100101
+#### -vinc01100101
