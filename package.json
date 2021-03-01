@@ -4,7 +4,9 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"start": "babel-watch ./server.js",
+		"babel:watch": "babel-watch ./server.js",
+		"node:sass": "node-sass -w src_client/scss/ -o dist/css/",
+		"start": "parallelshell \"npm run node:sass\" \"npm run babel:watch\"",
 		"build": "webpack --mode production"
 	},
 	"keywords": [],
@@ -23,6 +25,7 @@
 	"dependencies": {
 		"dotenv": "^8.2.0",
 		"express": "^4.17.1",
+		"pug": "^3.0.2",
 		"react": "^17.0.1",
 		"react-dom": "^17.0.1"
 	}

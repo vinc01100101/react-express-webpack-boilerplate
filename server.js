@@ -1,3 +1,5 @@
+/* PARALLELSHELL and NODE SASS ARE GLOBAL, RE INSTALL THEM */
+const path = require("path");
 const express = require("express");
 const app = express();
 
@@ -37,11 +39,11 @@ if (devServerEnabled) {
     );
 }
 
-app.use(express.static(__dirname + "./dist"));
+app.use(express.static(path.join(__dirname, "dist")));
 
 app.get("/", (req, res) => {
     console.log("HOME!!");
-    res.sendFile(__dirname + "/dist/index.html");
+    res.render(path.join(__dirname, "dist/index.pug"));
 });
 
 app.listen(port, () => {

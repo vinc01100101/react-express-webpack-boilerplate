@@ -3,7 +3,7 @@ const path = require("path");
 module.exports = {
     mode: "development",
     entry: {
-        app: ["./src_client/index.js"],
+        home: ["./src_client/Home.js"],
     },
     output: {
         path: path.join(__dirname, "dist"),
