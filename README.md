@@ -1,6 +1,6 @@
 #React-Express-Webpack Boilerplate
 ##with HMR and webpack-dev-module
-(node-sass optional)
+(node-sass optional.)
 
 My personal boilerplate for use that has HMR and webpack-dev-module
 
