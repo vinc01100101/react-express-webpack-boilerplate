@@ -3,12 +3,12 @@ const path = require("path");
 const express = require("express");
 const app = express();
 
-require("dotenv").config();
+//get the env mode set in package.json script, trip spaces
+const nodeEnv = process.env.NODE_ENV.trim();
+if (nodeEnv !== "production") {
+    require("dotenv").config();
+    console.log("development mode");
 
-const port = process.env.PORT;
-const devServerEnabled = true;
-
-if (devServerEnabled) {
     const webpack = require("webpack");
     const webpackDevMiddleware = require("webpack-dev-middleware");
     const config = require("./webpack.config.js");
@@ -37,15 +37,24 @@ if (devServerEnabled) {
             publicPath: config.output.publicPath,
         })
     );
+} else {
+    console.log("mode = " + process.env.NODE_ENV);
 }
+
+const port = process.env.PORT || 3000;
 
 app.use(express.static(path.join(__dirname, "dist")));
 
 app.get("/", (req, res) => {
     console.log("HOME!!");
-    res.render(path.join(__dirname, "dist/index.pug"));
+    res.render(path.join(__dirname, "dist/index.pug"), {
+        page: "Home",
+    });
 });
 
+app.use((req, res) => {
+    res.status(404).end();
+});
 app.listen(port, () => {
     console.log("Server started on port: " + port);
 });
